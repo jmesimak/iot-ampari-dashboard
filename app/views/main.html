@@ -1,23 +1,26 @@
-<div class="jumbotron">
-  <h1>'Allo, 'Allo!</h1>
-  <p class="lead">
-    <img src="images/yeoman.png" alt="I'm Yeoman"><br>
-    Always a pleasure scaffolding your apps.
-  </p>
-  <p><a class="btn btn-lg btn-success" ng-href="#/">Splendid!<span class="glyphicon glyphicon-ok"></span></a></p>
+<div ng-controller="StatusCtrl">
+  <div class="row status">
+    <h4>Jonnepeber's current status</h4>
+    <div class="col-sm-4">
+      <p><span class="glyphicon glyphicon-apple icon-big icon-{{status.status}}"></span></p>
+    </div>
+    <div class="col-sm-8">
+      <ul>
+        <li>{{status.text}}</li>
+        <li>Estimated time to next watering: {{estimation}}h</li>
+      </ul>
+    </div>
+  </div>
 </div>
 
-<div class="row marketing">
-  <h4>HTML5 Boilerplate</h4>
-  <p>
-    HTML5 Boilerplate is a professional front-end template for building fast, robust, and adaptable web apps or sites.
-  </p>
+<div ng-controller="ChartCtrl">
+  <div class="row">
+    <h4>Soil moisture</h4>
+    <canvas id="line" class="chart chart-line" chart-data="moistureData" chart-labels="moistureLabels" chart-legend="true" chart-series="moistureSeries"</canvas>
+  </div>
 
-  <h4>Angular</h4>
-  <p>
-    AngularJS is a toolset for building the framework most suited to your application development.
-  </p>
-
-  <h4>Karma</h4>
-  <p>Spectacular Test Runner for JavaScript.</p>
+  <div class="row">
+    <h4>Bucket temperature</h4>
+    <canvas id="line" class="chart chart-line" chart-data="temperatureData" chart-labels="temperatureLabels" chart-legend="true" chart-series="temperatureSeries"</canvas>
+  </div>
 </div>

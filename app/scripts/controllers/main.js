@@ -8,10 +8,8 @@
  * Controller of the ghIotDashboardApp
  */
 angular.module('ghIotDashboardApp')
-  .controller('MainCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+  .controller('MainCtrl', function (ApiService) {
+    ApiService.deviceReadings("1", function(response) {
+      console.log(response);
+    })
   });
